@@ -1,0 +1,2 @@
+ALTER TABLE users
+ADD COLUMN date_creation TIMESTAMP default CURRENT_TIMESTAMP;
