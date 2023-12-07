@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 100px;
+  padding-inline: 20px;
+  padding: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 20px;
+}
+
+header > nav {
+  display: flex;
+}
+
+header > nav > ul.navLinks {
+  display: flex;
+  gap: 160px;
+}
+
+header > nav > ul.navLinks > a > li {
+  list-style: none;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  padding: 1px;
+}
+
+header > div.configurations {
+}
+
+header > div.configurations > div.menuConfig {
+  cursor: pointer;
+  display: flex; /* Alterado para flex */
+  align-items: center; /* Adicionado para centralizar */
+}
+
+header > div.configurations > div.menuConfig img.rotate {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+.rotatecloserotate {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-in-out;
+}
+
+header > div.configurations > ul.menuConfigOptions {
+  display: none;
+}
+
+header > div.configurations.menuConfigAtiv > ul.menuConfigOptions {
+
+}
+
+header > div.configurations > ul {
+  list-style: none;
+}
+
+header > nav > ul.navLinks > a {
+  text-decoration: none;
+  position: relative;
+  color: white;
+}
+
+header > nav > ul.navLinks > a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #438432;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+header > nav > ul.navLinks > a:hover::after {
+  width: 100%;
+}
+
+header > a > div.navbarLogo {
+  display: flex;
+  gap: 10px;
+  color: black;
+}
+
+header > a > div.navbarLogo > img:hover {
+  animation: rodarLogo 1.0s ease-out;
+}
+
+div.menuIcon {
+  display: none;
+}
+
+div.menuIcon img {
+  width: 30px;
+}
+
+@keyframes rodarLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 765px) {
+  header {
+    padding: 15px;
+    gap: 0;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  div.navbarLogo > h1 {
+    display: none;
+  }
+
+  div.menuIcon {
+    display: block;
+    transition: all 1s ease-in-out;
+  }
+
+  header > nav > ul.navLinks {
+    display: none;
+  }
+
+  header > nav {
+    display: grid;
+    place-items: center;
+    gap: 5px;
+  }
+
+  header > nav > ul {
+    list-style: none;
+  }
+
+  header > nav > ul > a {
+    color: white;
+  }
+
+  header > div.configurations.menuConfigAtiv > ul.menuConfigOptions {
+    display: none;
+  }
+}

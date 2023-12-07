@@ -1,0 +1,55 @@
+.about-section{
+    background-color: #E1FFDD;
+}
+.about-section>div{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.about-title{
+    border: none;
+    padding: 50px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-title>h2{
+    border-left: solid #6DBF63;
+    padding: 5px;
+}
+
+.cloverImg{
+    height: 30px;
+}
+
+.about-description>p{
+    font-size: 20px;
+    color: black;
+    text-align: justify;
+    margin: 20px;
+}
+.waveAbout{
+    object-fit: cover;
+}
+
+.about-description{
+    width: 80%;
+}
+@media (max-width: 750px){
+    .about-description>p{
+        font-size: 13px;
+        margin: 10px;
+    }
+    .about-description{
+        width: 75%;
+        display: grid;
+        place-items: center;
+    }
+}
+@media (max-width: 390px){
+
+}

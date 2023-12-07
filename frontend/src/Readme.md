@@ -1,0 +1,4 @@
+INFORMAÇÕES SOBRE O FRONT
+
+FONTE PRINCIPAL:
+Quicksand do google fonts
