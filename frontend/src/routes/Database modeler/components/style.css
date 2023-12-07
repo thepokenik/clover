@@ -1,0 +1,65 @@
+main.modelerMain{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+  }
+  .ADMTerminal{
+    border: solid 2px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff; /* Cor de fundo, ajuste conforme necessário */
+    padding: 20px;
+    color: black;
+  }
+  .checkValue{
+    display: grid;
+  }
+  .column{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+  .table{
+    display: grid;
+    position: absolute;
+    place-items: center;
+  }
+  .newTable{
+    border: solid 1px;
+    padding: 10px;
+    height: 100%;
+  }
+  .newTableGrid{
+    display: grid;
+    width: 100%;
+  }
+  ul{
+    list-style:none;
+  }
+  .screenModel{
+    height: 100%;
+    width: 100%;
+  }
+  .tableStyle{
+    text-align: center;
+    border: solid 2px;
+    width: 25vh;
+    height: 15vh;
+    margin: 5px;
+    overflow: auto;
+    resize: both;
+  }
+  h3{
+    outline: solid 1px;
+  }
+  li{
+    white-space: nowrap;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    padding: 2px;
+  }

@@ -1,0 +1,67 @@
+/* Estilos para a seção de erro 404 */
+article.articleErrorPage404 {
+  height: 100vh;
+}
+
+article.articleErrorPage404 > section {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* Estilos para o título "404" */
+article.articleErrorPage404 > section > div.title404 {
+  display: flex;
+  align-items: center;
+}
+
+article.articleErrorPage404 > section > div.title404 > h1 {
+  font-size: 120px;
+  text-decoration: underline 3px;
+}
+
+/* Estilos para a mensagem de erro */
+article.articleErrorPage404 > section > div.txtError {
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+}
+
+/* Estilos para o botão de retorno */
+article.articleErrorPage404 > section > a > button {
+  background-color: #2d492b;
+  padding: 10px;
+  padding-inline: 30px;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  position: relative;
+  z-index: 1000;
+  cursor: pointer;
+  transition: box-shadow 0.5s ease-out;
+}
+
+article.articleErrorPage404 > section > a > button:hover {
+  box-shadow: 0px 0px 5px black;
+}
+
+/* Estilos para a imagem animada */
+article.articleErrorPage404 > section img {
+  width: 100px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
