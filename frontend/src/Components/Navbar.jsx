@@ -48,6 +48,10 @@ const Navbar = () => {
           <Link to="/Register">
             <li>Cadastre-se</li>
           </Link>
+          <label className="switch">
+              <input type="checkbox"/>
+              <span className="slider"></span>
+          </label>
         </ul>
       </nav>
       {/* <div className="configurations">
