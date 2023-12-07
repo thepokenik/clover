@@ -4,14 +4,14 @@ import React, { createContext, useContext, useState } from 'react';
 const GlobalContext = createContext();
 
 export const GlobalProvider = ({ children }) => {
-  const [username, setUsername] = useState('Valor Inicial');
+  const [token, setToken] = useState(null);
 
-  const updateUsername = (newValue) => {
-    setUsername(newValue);
+  const updateToken = (newValue) => {
+    setToken(newValue);
   };
 
   return (
-    <GlobalContext.Provider value={{ username, updateUsername }}>
+    <GlobalContext.Provider value={{ token, updateToken }}>
       {children}
     </GlobalContext.Provider>
   );

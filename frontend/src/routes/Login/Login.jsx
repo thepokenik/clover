@@ -42,9 +42,10 @@ const Login = () => {
       });
 
       if (response.ok) {
-        const token = await response.json();
+        const responseJson = await response.json();
+        const token = responseJson.token;
         console.log("Login bem sucedido!");
-        localStorage.setItem('token' , token)
+        localStorage.setItem('token', token);
         window.location.href = `http://localhost:5173`;
       } else if (response.status === 401) {
         const error = await response.json(Error);
@@ -60,8 +61,8 @@ const Login = () => {
     }
   };
   const closeModalOpacity = () => {
-    setModalOpacity({display: 'none'});
-    setModal({display: 'none'});
+    setModalOpacity({ display: 'none' });
+    setModal({ display: 'none' });
   }
   return (
     <main className='loginMain'>
@@ -69,7 +70,7 @@ const Login = () => {
         <fieldset>
           <div className='imgLogin'>
             <div>
-              <span>Desbrave o mundo do código com<br/>confiança e conhecimento</span>
+              <span>Desbrave o mundo do código com<br />confiança e conhecimento</span>
             </div>
             <img className='imglog' src={imgLogin} alt="imageLogin" />
           </div>
@@ -96,11 +97,11 @@ const Login = () => {
                 </button>
               </Link>
             </div>
-             <Link to={`/register`}>
-                <label>
-                  Não possui uma conta? Registre-se agora!
-                </label>
-              </Link>
+            <Link to={`/register`}>
+              <label>
+                Não possui uma conta? Registre-se agora!
+              </label>
+            </Link>
           </form>
         </fieldset>
       </article>
@@ -112,11 +113,11 @@ const Login = () => {
           </div>
           <hr />
           <div className="errorMessages">
-              {errors.map((erro,index) =>(
+            {errors.map((erro, index) => (
               <div key={index}>
                 <strong>{erro.Error}</strong>
               </div>
-              ))}
+            ))}
           </div>
         </div>
       </div>

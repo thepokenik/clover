@@ -6,14 +6,12 @@ import Projects from './routes/projects/Projects';
 import About from './routes/About/About';
 import Creators from './routes/Creators/Creators';
 import SplashScreen from './Components/SplashScreen';
-import { GlobalProvider } from './GlobalContext';
 function App() {
 
   const [count, setCount] = useState(0)
   
   return (
     <>
-    <GlobalProvider>
       <div>
       <SplashScreen />
       <Navbar />
@@ -24,7 +22,6 @@ function App() {
           <Creators />
         </main>
       </div>
-    </GlobalProvider>
     </>
   )
 }
