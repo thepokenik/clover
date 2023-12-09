@@ -1,11 +1,15 @@
-package com.API.getUser.projectController;
+package com.API.getUser.Controller;
 
-import com.API.getUser.projectDTO.AutenticarProjects;
-import com.API.getUser.projectDTO.DadosListagemProjects;
-import com.API.getUser.userProjects.Projects;
-import com.API.getUser.userProjects.ProjectsRepository;
+import com.API.getUser.DTO.AutenticarProjects;
+import com.API.getUser.DTO.DadosAtualizacaoProject;
+import com.API.getUser.DTO.DadosListagemProjects;
+import com.API.getUser.DTO.DadosProjectsNovo;
+import com.API.getUser.projects.Projects;
+import com.API.getUser.projects.ProjectsRepository;
 import com.API.getUser.users.Users;
 import com.API.getUser.users.UsersRepository;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -48,6 +52,19 @@ public class ProjectsController {
         return ResponseEntity.status(200).body(projectPage);
     }
 
+    @GetMapping("/{idProjects}")
+    public ResponseEntity getProjects(@PathVariable Long idProjects) {
+        System.out.println(idProjects);
+        var project = repository.getReferenceById(idProjects);
+
+        if (project != null) {
+            return ResponseEntity.ok(new DadosProjectsNovo(project));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
 
 
     @PostMapping("/newRepository")
@@ -83,6 +100,41 @@ public class ProjectsController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }
+
+    @DeleteMapping("/{idProjects}")
+    @Transactional
+    public ResponseEntity deletarProjects(@PathVariable Long idProjects){
+        var delProjects= repository.findById(idProjects);
+        if(repository.findById(idProjects).isEmpty()){
+        repository.deleteById(idProjects);
+        return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @PutMapping
+    @Transactional
+    public ResponseEntity updateProject(@RequestBody @Valid DadosAtualizacaoProject dados) {
+        Long projectId = dados.idProject();
+
+        if (projectId == null) {
+            // Lógica para lidar com ID nulo, se necessário
+            return ResponseEntity.badRequest().body("ID do projeto não pode ser nulo");
+        }
+
+        try {
+            var project = repository.getReferenceById(projectId);
+            project.atualizarProject(dados);
+            return ResponseEntity.ok(new DadosProjectsNovo(project));
+        } catch (EntityNotFoundException ex) {
+            // Lógica para lidar com o caso em que a entidade não foi encontrada
+            return ResponseEntity.notFound().build();
+        } catch (Exception ex) {
+            // Lógica para lidar com outras exceções, se necessário
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar o projeto");
+        }
+    }
+
 
    /* private ResponseEntity<Long> getUserFromToken() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

@@ -1,4 +1,4 @@
-package com.API.getUser.projectDTO;
+package com.API.getUser.DTO;
 
 import com.API.getUser.users.Users;
 

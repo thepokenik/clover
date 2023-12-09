@@ -1,4 +1,4 @@
-package com.API.getUser.userProjects;
+package com.API.getUser.projects;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

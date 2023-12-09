@@ -1,7 +1,6 @@
-package com.API.getUser.projectDTO;
+package com.API.getUser.DTO;
 
-import com.API.getUser.userProjects.Projects;
-import com.API.getUser.users.Users;
+import com.API.getUser.projects.Projects;
 
 import java.time.LocalDateTime;
 

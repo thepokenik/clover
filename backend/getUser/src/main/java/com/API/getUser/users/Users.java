@@ -1,8 +1,9 @@
 package com.API.getUser.users;
 
-import com.API.getUser.userDTO.DadosAtualizacaoUsers;
-import com.API.getUser.userProjects.Projects;
+import com.API.getUser.DTO.DadosAtualizacaoUsers;
+import com.API.getUser.projects.Projects;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -64,7 +65,7 @@ public class Users implements UserDetails {
         this.date_creation = LocalDateTime.now();
     }
     // Método para atualizar informações do usuário com base nos dados fornecidos.
-    public void atualizarInformacoes(DadosAtualizacaoUsers dados) {
+    public void atualizarInformacoes(@Valid DadosAtualizacaoUsers dados) {
         if (dados.username() != null) {
             this.username = dados.username();
         }

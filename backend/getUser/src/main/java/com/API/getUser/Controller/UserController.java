@@ -13,6 +13,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 /**
  * Controlador para manipulação de usuários.
  */
@@ -61,4 +63,17 @@ public class UserController {
         var user = repository.getReferenceById(id_User);
         return ResponseEntity.ok(new DadosUserNovo(user));
     }
+    @DeleteMapping("/{id_User}")
+    @Transactional
+    public ResponseEntity excluirUser(@PathVariable Long id_User) {
+        Optional<Users> users = repository.findById(id_User);
+
+        if(users.isPresent()) {
+            repository.deleteById(id_User);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

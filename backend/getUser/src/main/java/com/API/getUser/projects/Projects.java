@@ -1,13 +1,13 @@
-package com.API.getUser.userProjects;
+package com.API.getUser.projects;
 
+import com.API.getUser.DTO.DadosAtualizacaoProject;
 import com.API.getUser.users.Users;
-import com.API.getUser.users.UsersRepository;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
 
@@ -69,4 +69,25 @@ public class Projects{
                 ", user=" + user +
                 '}';
     }
+
+    public void atualizarProject(DadosAtualizacaoProject dados) {
+
+        if (dados.projectName() != null) {
+            this.projectName = dados.projectName();
+        }
+        if (dados.projectReadme() != null) {
+            this.projectReadme = dados.projectReadme();
+        }
+        if (dados.projectDescription() != null) {
+            this.projectDescription = dados.projectDescription();
+        }
+        if (dados.projectFile() != null) {
+
+            this.projectFile = dados.projectFile();
+        }
+        if (dados.projectProgress() != null) {
+            this.projectProgress = dados.projectProgress().now();
+        }
+    }
+
 }

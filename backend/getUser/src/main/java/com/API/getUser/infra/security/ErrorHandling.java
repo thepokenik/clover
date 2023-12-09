@@ -1,5 +1,6 @@
 package com.API.getUser.infra.security;
 
+import com.auth0.jwt.exceptions.JWTVerificationException;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.core.Ordered;
