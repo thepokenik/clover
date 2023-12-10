@@ -1,7 +1,9 @@
 package com.API.getUser.users;
 
 import com.API.getUser.DTO.DadosAtualizacaoUsers;
+import com.API.getUser.projects.Projects;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -52,6 +54,9 @@ public class Users implements UserDetails {
     @Column
     private LocalDateTime date_creation;
 
+    @OneToMany(mappedBy = "user")
+    private List<Projects> projects;
+
     // Construtor para criar um usuário com informações básicas.
     public Users(String username, String password, String email, LocalDateTime date_creation) {
         this.username = username;
@@ -59,9 +64,8 @@ public class Users implements UserDetails {
         this.email = email;
         this.date_creation = LocalDateTime.now();
     }
-
     // Método para atualizar informações do usuário com base nos dados fornecidos.
-    public void atualizarInformacoes(DadosAtualizacaoUsers dados) {
+    public void atualizarInformacoes(@Valid DadosAtualizacaoUsers dados) {
         if (dados.username() != null) {
             this.username = dados.username();
         }

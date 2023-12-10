@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
+import { GlobalProvider } from './GlobalContext';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -13,16 +14,7 @@ import Login from './routes/Login/Login.jsx';
 import About from './routes/About/About.jsx';
 import Creators from './routes/Creators/Creators.jsx';
 import Modeler from './routes/Database modeler/modeler.jsx';
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home />,
-//   },
-//   {
-//     path: "About",
-//     element: <About />
-//   },
-// ]);
+import Repository from './routes/Repository/Repository.jsx';
 
 const router = createBrowserRouter([
   {
@@ -59,11 +51,17 @@ const router = createBrowserRouter([
   {
     path: "modeler",
     element: <Modeler />,
+  },
+  {
+    path: "repository",
+    element: <Repository/>
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <GlobalProvider>
+      <RouterProvider router={router} />
+    </GlobalProvider>
   </React.StrictMode>,
 )
