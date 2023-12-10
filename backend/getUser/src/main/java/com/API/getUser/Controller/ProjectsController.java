@@ -4,6 +4,7 @@ import com.API.getUser.DTO.AutenticarProjects;
 import com.API.getUser.DTO.DadosAtualizacaoProject;
 import com.API.getUser.DTO.DadosListagemProjects;
 import com.API.getUser.DTO.DadosProjectsNovo;
+import com.API.getUser.infra.security.errorNotFoundId;
 import com.API.getUser.projects.Projects;
 import com.API.getUser.projects.ProjectsRepository;
 import com.API.getUser.users.Users;
@@ -19,6 +20,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/projects")
@@ -54,21 +57,26 @@ public class ProjectsController {
 
     @GetMapping("/{idProjects}")
     public ResponseEntity getProjects(@PathVariable Long idProjects) {
-        System.out.println(idProjects);
-        var project = repository.getReferenceById(idProjects);
+        try {
+            Optional<Projects> optionalProject = repository.findById(idProjects);
 
-        if (project != null) {
-            return ResponseEntity.ok(new DadosProjectsNovo(project));
-        } else {
-            return ResponseEntity.notFound().build();
+            if (optionalProject.isPresent()) {
+                Projects project = optionalProject.get();
+                return ResponseEntity.ok(new DadosProjectsNovo(project));
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new errorNotFoundId("Projeto não encontrado!", idProjects));
+            }
+        } catch (Exception ex) {
+            String mensagemErro = "Erro ao pesquisar projeto: " + ex.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(mensagemErro);
         }
     }
 
 
-
-
     @PostMapping("/newRepository")
+    @Transactional
     public ResponseEntity<DadosListagemProjects> newRepository(@RequestBody @Valid AutenticarProjects dados) {
+
         Users user = (Users) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (user == null) {
@@ -103,15 +111,23 @@ public class ProjectsController {
 
     @DeleteMapping("/{idProjects}")
     @Transactional
-    public ResponseEntity deletarProjects(@PathVariable Long idProjects){
-        var delProjects= repository.findById(idProjects);
-        if(repository.findById(idProjects).isEmpty()){
-        repository.deleteById(idProjects);
-        return ResponseEntity.noContent().build();
-        }else{
-            return ResponseEntity.notFound().build();
+    public ResponseEntity deletarProjects(@PathVariable Long idProjects) {
+        try {
+            // Obter a entidade diretamente usando findById
+            var optionalProject = repository.findById(idProjects);
+
+            if (optionalProject.isPresent()) {
+                repository.deleteById(idProjects);
+                return ResponseEntity.noContent().build();
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new errorNotFoundId("Projeto não encontrado!", idProjects));
+            }
+        } catch (Exception ex) {
+            String mensagemErro = "Erro ao excluir o projeto: " + ex.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(mensagemErro);
         }
     }
+
     @PutMapping
     @Transactional
     public ResponseEntity updateProject(@RequestBody @Valid DadosAtualizacaoProject dados) {
@@ -127,12 +143,12 @@ public class ProjectsController {
             project.atualizarProject(dados);
             return ResponseEntity.ok(new DadosProjectsNovo(project));
         } catch (EntityNotFoundException ex) {
-            // Lógica para lidar com o caso em que a entidade não foi encontrada
-            return ResponseEntity.notFound().build();
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new errorNotFoundId("Projeto não encontrado!", projectId));
         } catch (Exception ex) {
-            // Lógica para lidar com outras exceções, se necessário
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao atualizar o projeto");
+            String mensagemErro = "Erro ao atualizar o projeto: " + ex.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(mensagemErro);
         }
+
     }
 
 

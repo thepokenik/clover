@@ -4,6 +4,7 @@ import com.API.getUser.DTO.DadosAtualizacaoProject;
 import com.API.getUser.users.Users;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,7 @@ public class Projects{
     @Column(name = "id_projects")
     private Long idProjects;
 
-    @Column(name = "projects_name")
+    @Column(name = "projects_name", nullable = false) @NotEmpty
     private String projectName;
 
     @Column(name = "creation_date")
@@ -33,13 +34,13 @@ public class Projects{
     @Column(name = "projects_progress")
     private LocalDateTime projectProgress;
 
-    @Column(name = "projects_readme")
+    @Column(name = "projects_readme", columnDefinition = "TEXT")
     private String projectReadme;
 
-    @Column(name = "projects_description")
+    @Column(name = "projects_description", columnDefinition = "TEXT")
     private String projectDescription;
 
-    @Column(name = "projects_file")
+    @Column(name = "projects_file", length = 20)
     private String projectFile;
 
     @ManyToOne

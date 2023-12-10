@@ -48,8 +48,12 @@ public class UserController {
     @Transactional
     public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoUsers dados) {
         var user = repository.getReferenceById(dados.id_User());
-        user.atualizarInformacoes(dados);
-        return ResponseEntity.ok(new DadosUserNovo(user));
+        if(user != null) {
+            user.atualizarInformacoes(dados);
+            return ResponseEntity.ok(new DadosUserNovo(user));
+        }else{
+            return ResponseEntity.notFound().build();
+        }
     }
 
     /**
@@ -61,7 +65,11 @@ public class UserController {
     @GetMapping("/{id_User}")
     public ResponseEntity detalhar(@PathVariable Long id_User) {
         var user = repository.getReferenceById(id_User);
-        return ResponseEntity.ok(new DadosUserNovo(user));
+        if (user != null) {
+            return ResponseEntity.ok(new DadosUserNovo(user));
+        } else {
+          return ResponseEntity.notFound().build();
+        }
     }
     @DeleteMapping("/{id_User}")
     @Transactional
