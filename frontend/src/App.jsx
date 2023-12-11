@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { Outlet } from 'react-router-dom';
-import Navbar from './Components/Navbar';
+import Navbar from './Components/NavBar/Navbar';
 import Projects from './routes/projects/Projects';
 import About from './routes/About/About';
 import Creators from './routes/Creators/Creators';

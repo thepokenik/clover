@@ -13,6 +13,9 @@ import Login from './routes/Login/Login.jsx';
 import About from './routes/About/About.jsx';
 import Creators from './routes/Creators/Creators.jsx';
 import Modeler from './routes/Database modeler/modeler.jsx';
+import UserHub from './routes/UserHub/userHub.jsx';
+import Contenttest from './routes/UserHub/components/Content.jsx';
+import Projectes from './routes/UserHub/components/Projects.jsx';
 // const router = createBrowserRouter([
 //   {
 //     path: "/",
@@ -59,6 +62,20 @@ const router = createBrowserRouter([
   {
     path: "modeler",
     element: <Modeler />,
+  },
+  {
+    path: "userhub/*",
+    element: <UserHub />,
+    children: [
+      {
+        path: 'projetos/perfil', // Relative to the parent route
+        element: <Contenttest />,
+      },
+      {
+        path: 'projetos/anot', // Relative to the parent route
+        element: <Projectes />,
+      },
+    ] 
   }
 ]);
 
