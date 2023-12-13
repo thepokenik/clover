@@ -1,102 +1,168 @@
 import React, { useEffect } from "react";
-import ScrollReveal from 'scrollreveal';
 import { Link } from "react-router-dom";
-import './Components/App.css'
-import imgWave from './Assets/wave.svg'
-import imgCalendario from './Assets/icons8-calendário-50.png'
-import imgMais from './Assets/icons8-mais-50.png'
-import imgPapel from './Assets/icons8-papel-50.png'
+import ScrollReveal from "scrollreveal";
+import "./Components/App.css";
+import imgWave from "./Assets/wave.svg";
+import imgCalendario from "./Assets/icons8-calendário-50.png";
+import imgMais from "./Assets/icons8-mais-50.png";
+import imgPapel from "./Assets/icons8-papel-50.png";
 
-/**
- * Componente React para a página de Projetos.
- * Utiliza a biblioteca ScrollReveal para animações de revelação ao rolar.
- */
 const Projects = () => {
-    // Efeito useEffect para configurar animações com ScrollReveal
-    useEffect(() => {
-        const sr = ScrollReveal();
-        
-        const calculateDistance = () => {
-            // Lógica para calcular a distância com base em fatores responsivos
-            return window.innerWidth > 768 ? '70px' : '0px';
-        };
+  useEffect(() => {
+    const sr = ScrollReveal();
 
-        sr.reveal('.projectsSection', {
-            origin: 'left',
-            duration: 1000,
-            distance: calculateDistance(),
-            reset: true,
-        });
+    const calculateDistance = () => {
+      return window.innerWidth > 768 ? "70px" : "0px";
+    };
 
-        sr.reveal('.ProjectsBox', {
-            origin: 'right',
-            duration: 1000,
-            distance: calculateDistance(),
-            reset: true,
-        });
+    sr.reveal(".projectsSection", {
+      origin: "left",
+      duration: 1000,
+      distance: calculateDistance(),
+      reset: true,
+    });
 
-        sr.reveal('.boxProjec', {
-            origin: 'bottom',
-            duration: 1000,
-            distance: calculateDistance(),
-            reset: true,
-        });
+    sr.reveal(".ProjectsBox", {
+      origin: "right",
+      duration: 1000,
+      distance: calculateDistance(),
+      reset: true,
+    });
 
-        sr.reveal('.projectsMore', {
-            origin: 'right',
-            duration: 1000,
-            distance: calculateDistance(),
-            reset: true,
-        });
-    }, []);
+    sr.reveal(".boxProject", {
+      origin: "bottom",
+      duration: 1000,
+      distance: calculateDistance(),
+      reset: true,
+    });
 
-    return (
-        <article className="projectsArticle">
-            {/* Imagem de Onda */}
-            <div className="waveProject"><img src={imgWave} alt="Wave" draggable="false"/></div>
+    sr.reveal(".projectsMore", {
+      origin: "right",
+      duration: 1000,
+      distance: calculateDistance(),
+      reset: true,
+    });
+  }, []);
 
-            {/* Seção de Projetos */}
-            <section className="projectsSection">
-                <div>
-                    <h2>Área de Trabalho</h2>
-                    {/* Box do Projeto - Calendário de Aulas */}
-                    <Link to="#">
-                        <div className="ProjectsBox">
-                            <div className="projectsMore">
-                                <Link to="">
-                                    <img src={imgMais} alt="mais" />
-                                </Link>
-                            </div>
-                            <div className="projectsCalendario">
-                                <img src={imgCalendario} alt="Calendário"/>
-                                <h3>Calendario de Aulas</h3>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
+  return (
+    <article className="projectsArticle">
+      <div className="waveProject">
+        <img src={imgWave} alt="Wave" draggable="false" />
+      </div>
 
-                {/* Projetos Aglomerados */}
-                <div className="projectsAglomerados">
-                    {/* Box do Projeto - Anotação */}
-                    {[1, 2, 3, 4].map((index) => (
-                        <Link to="" key={index}>
-                            <div className="boxProjec">
-                                <div className="projectsMore">
-                                    <Link to="">
-                                        <img src={imgMais} alt="mais" />
-                                    </Link>
-                                </div>
-                                <div className="Txt">
-                                    <img src={imgPapel} alt="Anotação" />
-                                    <h3>Anotação</h3>
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-            </section>
-        </article>
-    );
+      <section className="projectsSection">
+        <div>
+          <h2>Área de Trabalho</h2>
+          <Link to="#">
+            <div className="ProjectsBox">
+              <div className="projectsMore">
+                <Link to="">
+                  <img src={imgMais} alt="mais" />
+                </Link>
+              </div>
+              <div className="img-calend">
+                <img src={imgCalendario} alt="Calendário" />
+              </div>
+              <div className="projectsCalendario">
+                <h3>Calendario de Aulas</h3>
+                <p>
+                  Este é calendário onde você pode controlar os dias dos seus
+                  estudos!
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Novos blocos de Anotações */}
+        <div className="projectsAglomerados">
+          {/* Bloco 1 */}
+          <Link to="#">
+            <div className="boxProject1">
+              <div className="projectsMore">
+                <Link to="">
+                  <img src={imgMais} alt="mais" />
+                </Link>
+              </div>
+              <div className="anotacaoTxt">
+                <img src={imgPapel} alt="Anotações" />
+              </div>
+              <div className="projectsAnimation">
+                <h3>Calendario de Aulas</h3>
+                <p>
+                  Este é calendário onde você pode controlar os dias dos seus
+                  estudos!
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          {/* Bloco 2 */}
+          <Link to="#">
+            <div className="boxProject2">
+              <div className="projectsMore">
+                <Link to="">
+                  <img src={imgMais} alt="mais" />
+                </Link>
+              </div>
+              <div className="anotacaoTxt">
+                <img src={imgPapel} alt="Anotações" />
+              </div>
+              <div className="projectsAnimation">
+                <h3>Calendario de Aulas</h3>
+                <p>
+                  Este é calendário onde você pode controlar os dias dos seus
+                  estudos!
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          {/* Bloco 3 */}
+          <Link to="#">
+            <div className="boxProject3">
+              <div className="projectsMore">
+                <Link to="">
+                  <img src={imgMais} alt="mais" />
+                </Link>
+              </div>
+              <div className="anotacaoTxt">
+                <img src={imgPapel} alt="Anotações" />
+              </div>
+              <div className="projectsAnimation">
+                <h3>Calendario de Aulas</h3>
+                <p>
+                  Este é calendário onde você pode controlar os dias dos seus
+                  estudos!
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          {/* Bloco 4 */}
+          <Link to="#">
+            <div className="boxProject4">
+              <div className="projectsMore">
+                <Link to="">
+                  <img src={imgMais} alt="mais" />
+                </Link>
+              </div>
+              <div className="anotacaoTxt">
+                <img src={imgPapel} alt="Anotações" />
+              </div>
+              <div className="projectsAnimation">
+                <h3>Calendario de Aulas</h3>
+                <p>
+                  Este é calendário onde você pode controlar os dias dos seus
+                  estudos!
+                </p>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+    </article>
+  );
 };
 
 export default Projects;

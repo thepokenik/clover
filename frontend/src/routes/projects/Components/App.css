@@ -1,186 +1,783 @@
 /* Importação de fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap");
 
 /* Estilos para a seção de projetos */
 main > article.projectsArticle {
-    background-color: #E1FFDD;
-    font-family: 'Quicksand', sans-serif;
-    display: grid;
-    place-items: center;
+  background-color: #e1ffdd;
+  font-family: "Quicksand", sans-serif;
+  display: grid;
+  place-items: center;
 }
 
 /* Imagem de onda no topo da página */
 main > article.projectsArticle > div.waveProject > img {
-    position: absolute;
-    object-fit: cover;
-    z-index: 0;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
 }
 
 /* Estilos para a onda no topo da página */
 .waveProject {
-    display: grid;
-    width: 100%;
-    place-items: end;
+  display: grid;
+  width: 100%;
+  place-items: end;
 }
 
 /* Estilos para a seção de projetos */
 article.projectsArticle > section.projectsSection {
-    padding: 30px;
-    display: flex;
-    gap: 300px;
-    margin: 15px;
+  padding: 30px;
+  display: flex;
+  gap: 300px;
+  margin: 15px;
 }
 
 /* Título da seção de projetos */
 article.projectsArticle > section.projectsSection > div h2 {
-    color: black;
-    border-left: solid #6DBF63;
-    margin: 20px;
-    padding: 5px;
+  color: black;
+  border-left: solid #6dbf63;
+  margin: 20px;
+  padding: 5px;
 }
 
 /* Estilos para o box do projeto (Calendário de Aulas) */
 article.projectsArticle > section.projectsSection > div > a > div.ProjectsBox {
-    width: 220px;
-    height: 350px;
-    background-color: #6DBF63;
-    margin: 20px;
-    border-radius: 15px;
-    display: grid;
-    align-items: end;
-    grid-template-rows: 45px;
-    transition: all linear 0.3s;
+  width: 300px;
+  height: 450px;
+  background-color: #6dbf63;
+  margin: 20px;
+  border-radius: 15px;
+  display: grid;
+  align-items: end;
+  grid-template-rows: 45px;
+  transition: all linear 0.3s;
 }
 
 /* Efeito de hover para o box do projeto (Calendário de Aulas) */
-article.projectsArticle > section.projectsSection > div > a > div.ProjectsBox:hover {
-    box-shadow: 0px 0px 20px grey;
-    transform: scale(1.1);
+article.projectsArticle
+  > section.projectsSection
+  > div
+  > a
+  > div.ProjectsBox:hover {
+  box-shadow: 0px 0px 20px grey;
+  transform: scale(1.1);
 }
 
 /* Estilos para o link dentro do box do projeto */
 article.projectsArticle > section.projectsSection > div > a {
-    display: contents;
+  display: contents;
 }
 
 /* Estilos para o ícone de mais dentro do box do projeto */
 div.projectsMore {
-    display: flex;
-    justify-content: end;
-    padding-inline: 5px;
+  display: flex;
+  justify-content: end;
+  padding-inline: 5px;
 }
 
 /* Estilos para o ícone de mais dentro do box do projeto */
 div.projectsMore img {
-    width: 25px;
-    padding: 5px;
+  width: 25px;
+  padding: 5px;
 }
 
 /* Estilos para o conteúdo do box do projeto (Calendário de Aulas) */
-article.projectsArticle > section.projectsSection > div > a > div.ProjectsBox > div.projectsCalendario {
-    padding: 25px;   
+article.projectsArticle
+  > section.projectsSection
+  > div
+  > a
+  > div.ProjectsBox
+  > div.projectsCalendario {
+  padding: 25px;
 }
 
 /* Estilos para a imagem e o texto dentro do box do projeto (Calendário de Aulas) */
 div.projectsCalendario img {
-    width: 40px;
+  width: 40px;
 }
 
 div.projectsCalendario h3 {
-    color: white;
+  color: black;
 }
 
 /* Estilos para a seção de projetos aglomerados */
 article.projectsArticle > section.projectsSection > div.projectsAglomerados {
-    display: grid;
-    grid-template-columns: 200px 200px;
-    grid-template-rows: 200px;
-    gap: 30px;
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 200px;
+  gap: 30px;
 }
 
 /* Estilos para o box do projeto aglomerado */
-article.projectsArticle > section.projectsSection > div.projectsAglomerados > a > div.boxProjec {
-    background-color: #6DBF63;
-    border-radius: 15px;
-    padding: 20px;
-    color: white;
-    display: grid;
-    transition: all linear 0.3s;
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1 {
+  background-color: #6dbf63;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  display: grid;
+  transition: all linear 0.3s;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2 {
+  background-color: #6dbf63;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  display: grid;
+  transition: all linear 0.3s;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3 {
+  background-color: #6dbf63;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  display: grid;
+  transition: all linear 0.3s;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4 {
+  background-color: #6dbf63;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  display: grid;
+  transition: all linear 0.3s;
 }
 
 /* Efeito de hover para o box do projeto aglomerado */
-article.projectsArticle > section.projectsSection > div.projectsAglomerados > a > div.boxProjec:hover {
-    box-shadow: 0px 0px 20px grey;
-    transform: scale(1.1);
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1:hover {
+  box-shadow: 0px 0px 20px grey;
+  transform: scale(1.1);
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2:hover {
+  box-shadow: 0px 0px 20px grey;
+  transform: scale(1.1);
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3:hover {
+  box-shadow: 0px 0px 20px grey;
+  transform: scale(1.1);
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4:hover {
+  box-shadow: 0px 0px 20px grey;
+  transform: scale(1.1);
 }
 
 /* Estilos para o conteúdo do box do projeto aglomerado (Anotação) */
-article.projectsArticle > section.projectsSection > div.projectsAglomerados > a > div.boxProjec > div.anotacaoTxt {
-    padding: 5px;
-    display: grid;
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1
+  > div.anotacaoTxt {
+  padding: 5px;
+  display: grid;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2
+  > div.anotacaoTxt {
+  padding: 5px;
+  display: grid;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3
+  > div.anotacaoTxt {
+  padding: 5px;
+  display: grid;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4
+  > div.anotacaoTxt {
+  padding: 5px;
+  display: grid;
 }
 
 /* Estilos para a imagem dentro do box do projeto aglomerado (Anotação) */
-article.projectsArticle > section.projectsSection > div.projectsAglomerados > a > div.boxProjec > div.anotacaoTxt > img {
-    width: 40px;
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1
+  > div.anotacaoTxt
+  > img {
+  width: 40px;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2
+  > div.anotacaoTxt
+  > img {
+  width: 40px;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3
+  > div.anotacaoTxt
+  > img {
+  width: 40px;
+}
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4
+  > div.anotacaoTxt
+  > img {
+  width: 40px;
+}
+
+/* Projetos */
+
+.img-calend {
+  display: block;
+  margin: 0 auto;
+}
+
+.img-papel {
+  display: block;
+  margin: 0 auto;
+}
+
+.ProjectsBox {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+}
+
+.ProjectsBox:hover {
+  transform: scale(1.1);
+  transition: 0.5s ease;
+}
+
+.ProjectsBox:hover .projectsCalendario {
+  transform: translateY(0);
+}
+
+.ProjectsBox .projectsCalendario {
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#6dbf63, #e1ffdd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  color: black;
+}
+
+/* Estilos para a seção de projetos aglomerados */
+article.projectsArticle > section.projectsSection > div.projectsAglomerados {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Estilos para o box do projeto aglomerado */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4 {
+  background-color: #6dbf63;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  display: grid;
+  transition: all linear 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de hover para o box do projeto aglomerado */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1:hover,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2:hover,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3:hover,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4:hover {
+  box-shadow: 0px 0px 20px grey;
+
+  transform: none;
+}
+
+/* Estilos para o conteúdo do box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1
+  > div.anotacaoTxt,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2
+  > div.anotacaoTxt,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3
+  > div.anotacaoTxt,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4
+  > div.anotacaoTxt {
+  padding: 5px;
+  display: grid;
+}
+
+/* Estilos para a imagem dentro do box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1
+  > div.anotacaoTxt
+  > img,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2
+  > div.anotacaoTxt
+  > img,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3
+  > div.anotacaoTxt
+  > img,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4
+  > div.anotacaoTxt
+  > img {
+  width: 30px; /* Reduz o tamanho da imagem */
+}
+
+/* Estilos para o conteúdo do box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4
+  > div.projectsAnimation {
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#6dbf63, #e1ffdd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 2rem; /* Reduz o espaço à direita e à esquerda */
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  color: black;
+}
+
+/* Efeito de hover para o box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4:hover
+  > div.projectsAnimation {
+  transform: translateY(0);
+}
+/* Estilos para o conteúdo do box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4
+  > div.projectsAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#6dbf63, #e1ffdd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 2rem; /* Reduz o espaço à direita e à esquerda */
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  color: black;
+}
+
+/* Efeito de hover para o box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4:hover
+  > div.projectsAnimation {
+  transform: translateY(0);
+}
+/* Estilos para o box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4 {
+  background-color: #6dbf63;
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  display: grid;
+  transition: all linear 0.3s;
+  height: 250px; /* Ajuste a altura conforme necessário */
+  width: 250px; /* Ajuste a largura conforme necessário */
+}
+
+/* Estilos para o conteúdo do box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4
+  > div.projectsAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#6dbf63, #e1ffdd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 2rem; /* Reduz o espaço à direita e à esquerda */
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  color: black;
+}
+
+/* Efeito de hover para o box do projeto aglomerado (Anotação) */
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject1:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject2:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject3:hover
+  > div.projectsAnimation,
+article.projectsArticle
+  > section.projectsSection
+  > div.projectsAglomerados
+  > a
+  > div.boxProject4:hover
+  > div.projectsAnimation {
+  transform: translateY(0);
+}
+
+/* Efeito de hover para o box do projeto (Calendário de Aulas) */
+article.projectsArticle
+  > section.projectsSection
+  > div
+  > a
+  > div.ProjectsBox:hover {
+  box-shadow: 0px 0px 20px grey;
+  border: 2px solid #57c25c; /* Adiciona uma borda ao passar o mouse */
+}
+
+/* Ajustes para o conteúdo do box do projeto (Calendário de Aulas) */
+article.projectsArticle
+  > section.projectsSection
+  > div
+  > a
+  > div.ProjectsBox
+  .projectsCalendario {
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#6dbf63, #e1ffdd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 4rem;
+  transform: translateY(100%);
+  transition: 0.5s ease;
+  color: black;
+}
+
+/* Efeito de hover para o conteúdo do box do projeto (Calendário de Aulas) */
+article.projectsArticle
+  > section.projectsSection
+  > div
+  > a
+  > div.ProjectsBox:hover
+  .projectsCalendario {
+  transform: translateY(0);
 }
 
 /* Responsividade para telas menores que 1000px */
 @media (max-width: 1000px) {
-    article.projectsArticle > section.projectsSection {
-        gap: 0px;
-    }
+  article.projectsArticle > section.projectsSection {
+    gap: 0px;
+  }
 }
 
 /* Responsividade para telas menores que 765px */
 @media (max-width: 765px) {
-    article.projectsArticle > section.projectsSection {
-        display: grid;
-        place-items: center;
-        gap: 20px;
-        padding: 0px;
-    }
-    article.projectsArticle > section.projectsSection > div.projectsAglomerados {
-        grid-template-columns: 170px 170px;
-        grid-template-rows: 170px 170px;
-        gap: 20px;
-    }
+  article.projectsArticle > section.projectsSection {
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    padding: 0px;
+  }
+  article.projectsArticle > section.projectsSection > div.projectsAglomerados {
+    grid-template-columns: 170px 170px;
+    grid-template-rows: 170px 170px;
+    gap: 20px;
+  }
 }
 
 /* Responsividade para telas menores que 690px */
 @media (max-width: 690px) {
+  /* Ajusta o layout dos projetos aglomerados */
+  article.projectsArticle > section.projectsSection > div.projectsAglomerados {
+    grid-template-columns: 155px 155px;
+    grid-template-rows: 155px;
+    gap: 20px;
+  }
 
-    /* Ajusta o layout dos projetos aglomerados */
-    article.projectsArticle > section.projectsSection > div.projectsAglomerados {
-        grid-template-columns: 155px 155px;
-        grid-template-rows: 155px;
-        gap: 20px;
-    }
-
-    /* Ajusta a altura do box do projeto (Calendário de Aulas) */
-    article.projectsArticle > section.projectsSection > div > a > div.ProjectsBox {
-        height: 255px;
-    }
+  /* Ajusta a altura do box do projeto (Calendário de Aulas) */
+  article.projectsArticle
+    > section.projectsSection
+    > div
+    > a
+    > div.ProjectsBox {
+    height: 255px;
+  }
 }
 
 /* Responsividade para telas menores que 690px */
 @media (max-width: 690px) {
-    /* Ajusta o espaçamento dos projetos aglomerados */
-    article.projectsArticle > section.projectsSection > div.projectsAglomerados {
-        gap: 10px;
-        padding: 0px;
-    }
+  /* Ajusta o espaçamento dos projetos aglomerados */
+  article.projectsArticle > section.projectsSection > div.projectsAglomerados {
+    gap: 10px;
+    padding: 0px;
+  }
 
-    /* Ajusta a margem da seção de projetos */
-    article.projectsArticle > section.projectsSection {
-        margin: 0px;
-    }
+  /* Ajusta a margem da seção de projetos */
+  article.projectsArticle > section.projectsSection {
+    margin: 0px;
+  }
 }
-@media (max-width: 490px){
-    article.projectsArticle > section.projectsSection > div.projectsAglomerados {
-        grid-template-columns: 140px 140px;
-        grid-template-rows: 140px;
-        gap: 20px;
-        margin: 5px;
-    }
+@media (max-width: 490px) {
+  article.projectsArticle > section.projectsSection > div.projectsAglomerados {
+    grid-template-columns: 140px 140px;
+    grid-template-rows: 140px;
+    gap: 20px;
+    margin: 5px;
+  }
 }
