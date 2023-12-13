@@ -1,6 +1,6 @@
 package com.API.getUser.service;
 
-import com.API.getUser.users.UsersRepository;
+import com.API.getUser.models.users.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

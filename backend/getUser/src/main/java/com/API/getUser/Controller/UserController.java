@@ -3,7 +3,9 @@ package com.API.getUser.Controller;
 import com.API.getUser.DTO.DadosAtualizacaoUsers;
 import com.API.getUser.DTO.DadosListagemUsers;
 import com.API.getUser.DTO.DadosUserNovo;
-import com.API.getUser.users.*;
+import com.API.getUser.models.users.Users;
+import com.API.getUser.models.users.UsersRepository;
+import com.API.getUser.models.users.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +57,8 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
 
     /**
      * Retorna os detalhes de um usuário com base no ID fornecido.

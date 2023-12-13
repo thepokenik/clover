@@ -1,7 +1,8 @@
-package com.API.getUser.projects;
+package com.API.getUser.models.projects;
 
 import com.API.getUser.DTO.DadosAtualizacaoProject;
-import com.API.getUser.users.Users;
+import com.API.getUser.models.commit.Commits;
+import com.API.getUser.models.users.Users;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
@@ -10,6 +11,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "projects")
@@ -43,6 +46,9 @@ public class Projects {
     @ManyToOne
     @JoinColumn(name = "id_user")
     private Users user; // Renomeado para singular para refletir a cardinalidade
+
+    @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    private List<Commits> commits;
 
     public Projects(String projectName, LocalDateTime creationDate, LocalDateTime projectProgress, String projectDescription, String projectReadme, Users user) {
         this.projectName = projectName;
@@ -80,4 +86,12 @@ public class Projects {
             this.projectProgress = LocalDateTime.now();
         }
     }
+
+    public List<Commits> getCommits() {
+        if (this.commits == null) {
+            this.commits = new ArrayList<>();
+        }
+        return this.commits;
+    }
+
 }

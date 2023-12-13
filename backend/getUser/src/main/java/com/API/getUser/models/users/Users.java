@@ -1,7 +1,7 @@
-package com.API.getUser.users;
+package com.API.getUser.models.users;
 
 import com.API.getUser.DTO.DadosAtualizacaoUsers;
-import com.API.getUser.projects.Projects;
+import com.API.getUser.models.projects.Projects;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;

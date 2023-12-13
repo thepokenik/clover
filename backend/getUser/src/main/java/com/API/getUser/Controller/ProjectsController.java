@@ -5,10 +5,10 @@ import com.API.getUser.DTO.DadosAtualizacaoProject;
 import com.API.getUser.DTO.DadosListagemProjects;
 import com.API.getUser.DTO.DadosProjectsNovo;
 import com.API.getUser.infra.security.errorNotFoundId;
-import com.API.getUser.projects.Projects;
-import com.API.getUser.projects.ProjectsRepository;
-import com.API.getUser.users.Users;
-import com.API.getUser.users.UsersRepository;
+import com.API.getUser.models.projects.Projects;
+import com.API.getUser.models.projects.ProjectsRepository;
+import com.API.getUser.models.users.Users;
+import com.API.getUser.models.users.UsersRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -47,7 +47,6 @@ public class ProjectsController {
                             project.getProjectProgress(),
                             project.getProjectDescription(),
                             project.getProjectReadme(),
-                            project.getProjectFile(),
                             userId
                     );
                 });
@@ -73,7 +72,7 @@ public class ProjectsController {
     }
 
 
-    @PostMapping("/newRepository")
+    @PostMapping("/upload")
     @Transactional
     public ResponseEntity<DadosListagemProjects> newRepository(@RequestBody @Valid AutenticarProjects dados) {
 
@@ -89,7 +88,6 @@ public class ProjectsController {
                 dados.projectProgress(),
                 dados.projectDescription(),
                 dados.projectReadme(),
-                dados.projectFile(),
                 user
         );
 
@@ -102,7 +100,6 @@ public class ProjectsController {
                 savedProject.getProjectProgress(),
                 savedProject.getProjectDescription(),
                 savedProject.getProjectReadme(),
-                savedProject.getProjectFile(),
                 user.getId_User()
         );
 
