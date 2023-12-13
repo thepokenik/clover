@@ -3,7 +3,6 @@ package com.API.getUser.projects;
 import com.API.getUser.DTO.DadosAtualizacaoProject;
 import com.API.getUser.users.Users;
 import jakarta.persistence.*;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,14 +17,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Projects{
+public class Projects {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_projects")
+    @Column(name = "id_project")
     private Long idProjects;
 
-    @Column(name = "projects_name", nullable = false) @NotEmpty
+    @Column(name = "project_name", nullable = false)
+    @NotEmpty
     private String projectName;
 
     @Column(name = "creation_date")
@@ -37,26 +37,22 @@ public class Projects{
     @Column(name = "projects_readme", columnDefinition = "TEXT")
     private String projectReadme;
 
-    @Column(name = "projects_description", columnDefinition = "TEXT")
+    @Column(name = "project_description", columnDefinition = "TEXT")
     private String projectDescription;
 
-    @Column(name = "projects_file", length = 20)
-    private String projectFile;
-
     @ManyToOne
-    @JoinColumn(name = "id_User")
-    private Users user;  // Renomeado para singular para refletir a cardinalidade
+    @JoinColumn(name = "id_user")
+    private Users user; // Renomeado para singular para refletir a cardinalidade
 
-
-    public Projects(String projectName, LocalDateTime creationDate, LocalDateTime projectProgress, String projectDescription, String projectReadme, String projectFile, Users user) {
+    public Projects(String projectName, LocalDateTime creationDate, LocalDateTime projectProgress, String projectDescription, String projectReadme, Users user) {
         this.projectName = projectName;
         this.creationDate = LocalDateTime.now();
         this.projectProgress = LocalDateTime.now();
         this.projectDescription = projectDescription;
         this.projectReadme = projectReadme;
-        this.projectFile = projectFile;
         this.user = user;
     }
+
     @Override
     public String toString() {
         return "Projects{" +
@@ -66,13 +62,11 @@ public class Projects{
                 ", projectProgress=" + projectProgress +
                 ", projectReadme='" + projectReadme + '\'' +
                 ", projectDescription='" + projectDescription + '\'' +
-                ", projectFile='" + projectFile + '\'' +
                 ", user=" + user +
                 '}';
     }
 
     public void atualizarProject(DadosAtualizacaoProject dados) {
-
         if (dados.projectName() != null) {
             this.projectName = dados.projectName();
         }
@@ -82,13 +76,8 @@ public class Projects{
         if (dados.projectDescription() != null) {
             this.projectDescription = dados.projectDescription();
         }
-        if (dados.projectFile() != null) {
-
-            this.projectFile = dados.projectFile();
-        }
         if (dados.projectProgress() != null) {
-            this.projectProgress = dados.projectProgress().now();
+            this.projectProgress = LocalDateTime.now();
         }
     }
-
 }
