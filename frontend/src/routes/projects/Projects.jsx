@@ -90,8 +90,10 @@ const Projects = () => {
               <div className="projectsAnimation">
                 <h3>Calendario de Aulas</h3>
                 <p>
-                  Este é calendário onde você pode controlar os dias dos seus
-                  estudos!
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                  voluptatem iusto quidem doloribus reiciendis officia vero ad
+                  dolor eaque aliquid tempore ab, beatae, fuga sequi voluptas
+                  expedita cum id incidunt.
                 </p>
               </div>
             </div>
