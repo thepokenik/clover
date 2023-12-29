@@ -25,9 +25,9 @@ function Creators() {
           <p>Judas M.</p>
         </div>
       </div>
-      {/* <div className="waveProject">
-        <img src={waveImg} alt="Wave" draggable="false"/>
-      </div> */}
+      <div className="waveProject">
+        <img className="waveAbout" src={waveImg} alt="Wave" draggable="false" />
+      </div>
     </section>
   );
 }
